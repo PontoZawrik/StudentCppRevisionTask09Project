@@ -1,4 +1,4 @@
-﻿#include "tasks.h"(
+﻿#include "tasks.h"
 
 /*	Task 04. Все целые степени двойк (All Integer Powers of Two)
 *
@@ -24,6 +24,16 @@
 *	[output 4]: 0
 */
 
-string task04(int n) {
-	return "";
+string task04(int number) {
+	if (number <= 0) {
+		return "0";
+	}
+
+	string msg = "1";
+	for (int i = 1; i < number; i++) {
+		if (pow(2, i) <= number) {
+			msg += " " + to_string((int)pow(2, i));
+		}
+	}
+	return msg;
 }
