@@ -28,5 +28,12 @@
 */
 
 int task07(long number) {
-	return 0;
+	number = number > 0 ? number : -number;
+	int result = number % 10;
+
+	while (number > 0) {
+		result = result < number % 10 ? result : number % 10;
+		number /= 10;
+	}
+	return result;
 }
